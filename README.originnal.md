@@ -1,6 +1,3 @@
-This is a fork of the [Dactyl-Manuform](https://github.com/abstracthat/dactyl-manuform).
-Check the original [README](https://github.com/dezzare/dactyl-manuform/README.original.md)
-
 # The Dactyl-ManuForm Keyboard
 This is a fork of the [Dactyl](https://github.com/adereth/dactyl-keyboard), a parameterized, split-hand, concave, columnar, ergonomic keyboard.
 
