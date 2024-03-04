@@ -1,134 +1,129 @@
 This is a fork of the [Dactyl-Manuform](https://github.com/abstracthat/dactyl-manuform).
 Check the original [README](https://github.com/dezzare/dactyl-manuform/README.original.md)
 
-# The Dactyl-ManuForm Keyboard
-This is a fork of the [Dactyl](https://github.com/adereth/dactyl-keyboard), a parameterized, split-hand, concave, columnar, ergonomic keyboard.
 
-![Imgur](http://i.imgur.com/LdjEhrR.jpg)
+# O Teclado Dactyl-ManuForm
+Primeiramente, devo destacar que não sabia soldar antes de começar este projeto. Então, se eu consegui você também consegue.
+O resultado final da minha implementação:
 
-The main change is that the thumb cluster was adapted from the [ManuForm keyboard](https://github.com/jeffgran/ManuForm) ([geekhack](https://geekhack.org/index.php?topic=46015.0)). The walls were changed to just drop to the floor. The keyboard is paramaterized to allow adjusting the following: 
+![Img](https://github.com/dezzare/dactyl-manuform/blob/master/dezzare/img/img11.jpeg)
 
-* Rows: 4 - 6 
-* Columns: 5 and up
-* Row curvature
-* Column curvature
-* Row tilt (tenting)
-* Column tilt
-* Column offsets
-* Height
+Eu construi uma versão 5x6, os modelos para impressão você pode encontrar em:
 
-I built a 4x5 version (40% size) for myself. The default has a bit more tenting than the Dactyl. See the following model files for configurations that may be most common:
+* [Parte Esquerda](https://github.com/dezzare/dactyl-manuform/blob/master/dezzare/left-5x6.stl)
+* [Parte Direita](https://github.com/dezzare/dactyl-manuform/blob/master/dezzare/right-5x6.stl)
+* [Tampa Esqueda](https://github.com/dezzare/dactyl-manuform/blob/master/dezzare/Left_5x6_Bottom_Plate.stl) 
+* [Tampa Direita](https://github.com/dezzare/dactyl-manuform/blob/master/dezzare/Right_5x6_Bottom_Plate.stl)
 
-* [40% size, (4x5)](https://github.com/tshort/dactyl-keyboard/blob/master/things/right-4x5.stl)
-* [60% size, (5x6)](https://github.com/tshort/dactyl-keyboard/blob/master/things/right-5x6.stl)
+Há diversas outras opções de tamanho, você pode checar o readme ou o repoositório original.
 
+## Montagem
 
-## Assembly
+### Material
 
-### Generating a Design
+Aqui está o material que você vai precisar para a montagem, na forma que eu fiz.
 
-**Setting up the Clojure environment**
-* [Install the Clojure runtime](https://clojure.org)
-* [Install the Leiningen project manager](http://leiningen.org/)
-* [Install OpenSCAD](http://www.openscad.org/)
+* Dois Arduino Pro Micros (Artmega32u4)
+* Switches (Keyboard Switches)
+* Keycaps
+* Parafuso M3 + "bucha"
+* Fios Jumper Femea
+* Diodos 1N4148
+* Conector RJ-9 Femea
+* Cabo RJ-9
+* Adaptador Micro USB Macho p/ USB Femea
+* Interruptor p/ reset
 
-**Generating the design**
-* Run `lein repl`
-* Load the file `(load-file "src/dactyl_keyboard/dactyl.clj")`
-* This will regenerate the `things/*.scad` files
-* Use OpenSCAD to open a `.scad` file.
-* Make changes to design, repeat `load-file`, OpenSCAD will watch for changes and rerender.
-* When done, use OpenSCAD to export STL files
+Além disto, ainda é necessário ter ferro de solda, estanho, alicate, multímetro e demais ferramentas que você acha que facilitaria sua vida para montar.
 
-**Tips**
-* [Some other ways to evaluate the clojure design file](http://stackoverflow.com/a/28213489)
-* [Example designing with clojure](http://adereth.github.io/blog/2014/04/09/3d-printing-with-clojure/)
+Algumas observações em relação ao material:
 
+#### Switches e Keycaps 
+Compre os Keycaps.
+No meu projeto eu utilizei um teclado antigo, já com defeito, para não ter que comprar Switches e Keycaps. Porém os keycaps tem tamanho diferentes de altura, o que tem me incomodado.  
 
-### Printing
-Pregenerated STL files are available in the [things/](things/) directory. 
-When a model is generated, it also generates a `.scad` model for a bottom plate. 
-This can be exported to a DXF file in OpenSCAD.
-The [things/](things/) directory also has DXF files for the bottom plate.
-When laser cut, some of the inside cuts will need to be removed. 
+#### Parafuso M3 e "Bucha"
+Eu moro em uma cidade pequena, tive dificuldade de achar a "bucha" para o parafuso. 
+Então eu peguei o que encontrei e cortei na metade: 
 
-This model can be tricky to print. 
-It's wide, so I've had problems with PLA on a Makerbot with edges warping. 
-This can cause the printer to think its head is jammed. 
-Even if it successfully prints, warping can cause problems. 
-On one print, the RJ-9 holder was squished, so I had to cut down my connector to fit.
+![Img](https://github.com/dezzare/dactyl-manuform/blob/master/dezzare/img/img10.jpeg)
 
-If printed at Shapeways or other professional shops, I would not expect such problems. 
+A metade de cima não tinha "ranhura", por isso utilizei a outra metade. Não é o ideal, mas serviu. 
 
-### Thingiverse
-
-[The 4x5 STL left/right pair](https://www.thingiverse.com/thing:2349390) from the [things/](things/) directory is in the thingiverse for public printing
-
-### Wiring
-
-Here are materials I used for wiring.
-
-* Two Arduino Pro Micros
-* [Heat-set inserts](https://www.mcmaster.com/#94180a331/=16yfrx1)
-* [M3 wafer-head screws, 5mm](http://www.metricscrews.us/index.php?main_page=product_info&cPath=155_185&products_id=455)
-* [Copper tape](https://www.amazon.com/gp/product/B009KB86BU)
-* [#32 magnet wire](https://www.amazon.com/gp/product/B00LV909HI)
-* [#30 wire](https://www.amazon.com/gp/product/B00GWFECWO)
-* [3-mm cast acrylic](http://www.mcmaster.com/#acrylic/=144mfom)
-* [Veroboard stripboard](https://www.amazon.com/gp/product/B008CPVMMU)
-* [1N4148 diodes](https://www.amazon.com/gp/product/B00LQPY0Y0)
-* [Female RJ-9 connectors](https://www.amazon.com/gp/product/B01HU7BVDU/)
-
-I wired one half using the traditional approach of using the legs of a diode to form the row connections. 
-(I'm not great at soldering, so this was challenging for me.)
-For this side, I used magnet wire to wire columns. That worked okay. 
-The magnet wire is small enough, it wants to move around, and it's hard to tell if you have a good connection.
-
-![Imgur](http://i.imgur.com/7kPvSgg.jpg)
-
-For another half, I used stripboard for the row connections. 
-This allowed me to presolder all of the diodes. 
-Then, I hot-glued this in place and finished the soldering of the other diode ends. 
-I like this approach quite a lot. 
-Connections for the diodes were much easier with one end fixed down. 
-On this half, I also used copper tape to connect columns. 
-This worked a bit better than the magnet wire for me. 
-For a future version, I may try just bare tinned copper wire for columns (something like #20). 
-With the stripboard, it's pretty easy keeping row and column connections separate.
-
-![Imgur](http://i.imgur.com/JOm5ElP.jpg)
-
-Note that a telephone handset cable has leads that are reversed, so take this into account when connecting these leads to the controller.
-
-The 3D printed part is the main keyboard. 
-You can attach a bottom plate with screws. 
-The case has holes for heat-set inserts designed to hold 3- to 6-mm long M3 screws. 
-Then, I used wafer-head screws to connect a bottom plate. 
-If wires aren't dangling, a bottom plate may not be needed. 
-You need something on the bottom to keep the keyboard from sliding around. 
-Without a plate, you could use a rubber pad, or you could dip the bottom of the keyboard in PlastiDip.
-
-For more photos of the first complete wiring of v0.4, see [Imgur](http://imgur.com/a/v9eIO).
-
-This is how the rows/columns wire to the keys and the ProMicro
-![Wire Diagram](https://docs.google.com/drawings/d/1s9aAg5bXBrhtb6Xw-sGOQQEndRNOqpBRyUyHkgpnSps/pub?w=1176&h=621)
+#### Fios Jumper Fêmea 
+Em tese eles não são essenciais para a construção do teclado, você pode solda a fiação direto na placa arduíno. Porém, aconselho MUITO você soldar os ferrinhos que vem junto (foto) e conectar os jumper neles, assim facilita na organização e eventual manutencão, 
+![Img](https://github.com/dezzare/dactyl-manuform/blob/master/dezzare/img/img12.jpeg)
 
 
-#### Alternative row-driven wiring diagram for ProMicro:
+#### Conector RJ-9 Fêmea e Cabo RJ-9
+Aqui tem um pulo do gato. Aconselho altamente este conector.
+Este conector vai servir para interligar as duas metades do teclado. Então o conector precisa, no mínimo, 3 vias(dados, positivo, "terra").
+Você pode substuir este conector por um conector P2 TRS, ou TRRS. PORÉM, toda vez que você conectar/desconectar, um teclado no outro, estará causando um curto. Então, TODA vez que conectar/desconectar uma parte na outra, eles NÃO PODEM estar conectados no computador(energizados). Por isso aconselho o rj-9.
 
-NOTE: you also make sure the firmware is set up correctly (ex: change row pins with col pins)
+ATENÇÃO 1: ele não é um conector igual telefone, ele tem 4 vias (telefone tem 2 normalmente), certifique-se de estar pegando o de 4 vias. 
+ATENÇÃO 2: o mesmo vale para o CABO, certifique-se que ele tem 4 vias. Se quiser você pode montar o seu. 
+ATENÇÃO 3: os cabos montados tem suas pontas espelhadas, ou seja, o fio do lado esquerdo será o do lado direito na outra ponta (em um dos lados vc conectará fios diferentes no arduino. Falarei mais a respeito no momento da montagem)
+![Img](https://github.com/dezzare/dactyl-manuform/blob/master/dezzare/img/img13.jpeg)
+  
 
+#### Adaptador Micro USB Macho p/ USB Femea
+Aqui vai muito de preferência de cada um, vi diversas montagens com adaptação para USB C, porém não encontrei para venda. 
+Optei por esta solução por ser a mais na mão, e deu super certo. 
+Só tive que descascar o cabo e ele coube perfeitamente no local reservado pra ele na impressão. 
+![Img](https://github.com/dezzare/dactyl-manuform/blob/master/dezzare/img/img9.jpeg)
+
+
+#### Interruptor p/ reset
+Este é outro pulo do gato. Ele não é extremamente necessário, mas nem vou entrar em detalhes, simplesmente compre e utilize na montagem. 
+Este foi o que eu usei, e sofri bastante para soldar. Há opções melhores, com as "perninhas" maiores (será mais fácil para você soldar)
+![Img](https://github.com/dezzare/dactyl-manuform/blob/master/dezzare/img/img14.jpeg)
+
+
+
+### Juntando tudo 
+
+A primeira coisa a ser feita é colocar os Switches no lugar:
+![Img](https://github.com/dezzare/dactyl-manuform/blob/master/dezzare/img/img1.jpeg)
+
+Para montagem eu utilizei o seguinte diagrama para solda e conexão no arduino
 ![Left Wire Diagram](/resources/dactyl_manuform_left_wire_diagram.png)
 
-![Left Wire Diagram](/resources/dactyl_manuform_right_wire_diagram.png)
+![Right Wire Diagram](/resources/dactyl_manuform_right_wire_diagram.png)
+
+Solde primeiramente as colunas, eu usei fios elétricos normais e conectei as pontas com o fio jumper.
+Na minha opinião, acho melhor soldar as colunas e o fio jumper antes de começar a solda as linhas com os diodos.
+
+![img](https://github.com/dezzare/dactyl-manuform/blob/master/dezzare/img/img4.jpeg)
+![img](https://github.com/dezzare/dactyl-manuform/blob/master/dezzare/img/img6.jpeg)
+
+Após soldado as colunas, faça as linhas soldando os diodos.
+ATENÇÃO: o lado dos diodos importam, fique atento, coloque o risco preto para fora conectando com os outros diodos. 
+
+![img](https://github.com/dezzare/dactyl-manuform/blob/master/dezzare/img/img5.jpeg)
+
+
+Caso você tenha optado pelo conector RJ-9, agora é a hora de conectar ele. 
+No meu caso eu tive que gastar um pouco a lateral do conector para caber no local destinado p/ ele.
+Lembre que caso você tenha comprado um cabo pronto, você deve se atentar que a solda/conexão no segundo arduino muda conforme a sua escolha dos fios a conectar no primeiro.
+Como assim a ordem muda? Simples, eles são espelhado. Em um lado você terá a ordem 1-2-3-4 e na outra ponta ele será 4-3-2-1. Então se você escolheu o fio 1 p/ ser o de dados, tenha certeza que pegue o fio 4 na outra ponta para conectar no local destinado a dados.
+Você também pode optar em fazer o seu próprio cabo, ai você não terá esse problema.
+
+Conecte o adaptador USB.
+
+Escolha o local onde você colocará o botão reset. Faça um furo, mas antes de coloca-lo lá e prender com cola-quente solde os fios nas pontas dele. Conecte o botão na placa.
+Pronto, teclado finalizado. Agora é só configurar do seu jeito.
 
 
 ### Firmware
 
-Firmware goes hand in hand with how you wire the circuit. 
-I adapted the QMK firmware [here](https://github.com/tshort/qmk_firmware/tree/master/keyboards/dactyl-manuform). 
-This allows each side to work separately or together. 
-This site also shows connections for the Arduino Pro Micro controllers.
+Eu achei que teria mais problema nessa parte, mas ela é bem tranquila. 
+Provavelmente você vai fazer o flash diversas vezes, até se dar por satisfeito com uma configuração que te agrade. Então, não tenha medo de alterar e fazer o flash você tem acesso fácil ao botão reset e não vai ter dor de cabeça toda a vez.
+O QMk tem uma ótima documentação, que te dá diversas opções de como fazer a mesma coisa. Se for usuário Windows ou Mac tem ainda um toolkit.
+
+A melhor dica que posso dar: use o [configurador online](https://config.qmk.fm/#/). Assim você pode vizualizar as teclas e ter mais ideias de atalhos e modificadores do que você vai gostar e que vai funcionar para você.
+Lembrando que o modelo que você procura no configurador online é o /handwired/dactyl_manuform/5x6.
+Se quiser, pode usar a minha configuração como base: [keymap.json](dezzare/keymap.json). Basta fazer o upload no configurador e partir dali.
+
 
 ## License
 
