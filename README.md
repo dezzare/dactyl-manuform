@@ -109,6 +109,7 @@ Como assim a ordem muda? Simples, eles são espelhado. Em um lado você terá a 
 Você também pode optar em fazer o seu próprio cabo, ai você não terá esse problema.
 
 Conecte o adaptador USB.
+![img](https://github.com/dezzare/dactyl-manuform/blob/master/dezzare/img/img8.jpeg)
 
 Escolha o local onde você colocará o botão reset. Faça um furo, mas antes de coloca-lo lá e prender com cola-quente solde os fios nas pontas dele. Conecte o botão na placa.
 Pronto, teclado finalizado. Agora é só configurar do seu jeito.
@@ -123,6 +124,7 @@ O QMk tem uma ótima documentação, que te dá diversas opções de como fazer 
 A melhor dica que posso dar: use o [configurador online](https://config.qmk.fm/#/). Assim você pode vizualizar as teclas e ter mais ideias de atalhos e modificadores do que você vai gostar e que vai funcionar para você.
 Lembrando que o modelo que você procura no configurador online é o /handwired/dactyl_manuform/5x6.
 Se quiser, pode usar a minha configuração como base: [keymap.json](dezzare/keymap.json). Basta fazer o upload no configurador e partir dali.
+
 
 
 ## License
