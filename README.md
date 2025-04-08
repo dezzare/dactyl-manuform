@@ -5,7 +5,9 @@ Check the original [README](https://github.com/dezzare/dactyl-manuform/README.or
 # O Teclado Dactyl-ManuForm
 Primeiramente, devo destacar que não sabia soldar antes de começar este projeto. Então, se eu consegui você também consegue.
 O resultado final da minha implementação:
+![Img](https://github.com/dezzare/dactyl-manuform/blob/master/dezzare/img/img14.jpeg)
 
+O resultado com os keycaps do teclado doador:
 ![Img](https://github.com/dezzare/dactyl-manuform/blob/master/dezzare/img/img11.jpeg)
 
 Eu construi uma versão 5x6, os modelos para impressão você pode encontrar em:
